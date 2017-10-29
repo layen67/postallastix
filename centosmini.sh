@@ -43,3 +43,4 @@ mkdir postal
 cd postal
 git clone https://github.com/layen67/postallastix.git
 cd docker-postal
+docker-compose up -d
