@@ -39,8 +39,6 @@ rpm -i nrclient-2.3.1.4360-free-centos-x86_64.rpm
 nrclientcmd -d 192.168.0.110 -u serverbox -p Ele10Kha6172
 
 cd /var/lib/docker
-mkdir postal
-cd postal
 git clone https://github.com/layen67/postallastix.git
-cd docker-postal
+cd postallastix
 docker-compose up -d
