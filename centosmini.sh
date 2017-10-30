@@ -49,7 +49,7 @@ docker-compose run postal postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
 docker-compose run postal start
-mv Dockerfile Dockerfile.txt
+cp docker-compose.yml /var/lib/docker/postallastix/yml/docker-compose.yml
 
 
 echo "Installing appropriate NeoRouter software..."
