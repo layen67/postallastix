@@ -34,6 +34,10 @@ yum upgrade -y python*
 
 yum -y remove postfix
 
+chmod +x /etc/rc.d/rc.local
+echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
+systemctl enable rc-local
+
 cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
 cd postallastix
@@ -45,7 +49,18 @@ docker-compose run postal initialize
 docker-compose run postal make-user
 docker-compose run postal start
 
-#neorouter
-wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
-rpm -i nrclient-2.3.1.4360-free-centos-x86_64.rpm
+
+echo "Installing appropriate NeoRouter software..."
+test=`uname -a | grep x86_64`
+if [ -z "$test" ]
+then
+ echo "This is 32-bit CentOS system."
+ wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
+ rpm -Uvh nrclient*
+else
+ echo "This is 64-bit CentOS system."
+ wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
+ rpm -Uvh nrclient*
+fi
 nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
+reboot
