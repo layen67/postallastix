@@ -33,9 +33,7 @@ pip install docker-compose
 yum upgrade -y python*
 
 yum -y remove postfix
-#neorouter
-wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
-rpm -i nrclient-2.3.1.4360-free-centos-x86_64.rpm
+
 cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
 cd postallastix
@@ -45,4 +43,7 @@ sed -i -e "s/example.com/callcenter.fr.nf/g" /var/lib/docker/postallastix/data/p
 docker-compose run postal initialize
 sleep 10
 docker-compose run postal make-user
+#neorouter
+wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
+rpm -i nrclient-2.3.1.4360-free-centos-x86_64.rpm
 nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
