@@ -35,6 +35,7 @@ yum upgrade -y python*
 yum -y remove postfix
 
 chmod +x /etc/rc.d/rc.local
+chmod +x /var/lib/docker/postallastix/boot.sh
 echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
 systemctl enable rc-local
 
