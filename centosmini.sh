@@ -35,13 +35,13 @@ yum upgrade -y python*
 yum -y remove postfix
 
 chmod +x /etc/rc.d/rc.local
-chmod +x /var/lib/docker/postallastix/boot.sh
 echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
 systemctl enable rc-local
 
 cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
 cd postallastix
+chmod +x /var/lib/docker/postallastix/boot.sh
 docker-compose up -d
 sleep 15
 sed -i -e "s/example.com/callcenter.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
