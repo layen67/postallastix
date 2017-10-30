@@ -38,11 +38,12 @@ cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
 cd postallastix
 docker-compose up -d
-
+sleep 15
 sed -i -e "s/example.com/callcenter.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
 docker-compose run postal postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
+docker-compose run postal start
 
 #neorouter
 wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
