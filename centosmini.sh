@@ -36,9 +36,15 @@ yum -y remove postfix
 #neorouter
 wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
 rpm -i nrclient-2.3.1.4360-free-centos-x86_64.rpm
-nrclientcmd -d 192.168.0.110 -u serverbox -p Ele10Kha6172
+nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
 
 cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
 cd postallastix
 docker-compose up -d
+sleep 10
+sed -i -e "s/example.com/callcenter.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
+docker-compose run postal initialize
+sleep 10
+docker-compose run postal make-user
+
