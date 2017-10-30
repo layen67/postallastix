@@ -56,7 +56,7 @@ test=`uname -a | grep x86_64`
 if [ -z "$test" ]
 then
  echo "This is 32-bit CentOS system."
- wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
+ wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-i386.rpm
  rpm -Uvh nrclient*
 else
  echo "This is 64-bit CentOS system."
