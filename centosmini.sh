@@ -66,5 +66,6 @@ else
  rpm -Uvh nrclient*
  nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
 fi
+sleep 5
 quit
 reboot
