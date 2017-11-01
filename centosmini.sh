@@ -52,6 +52,7 @@ docker-compose run postal start
 sleep 5
 rm codeship-steps.yml
 rm Dockerfile
+rm wrapper.sh
 
 
 echo "Installing appropriate NeoRouter software..."
