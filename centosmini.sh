@@ -49,6 +49,9 @@ docker-compose run postal postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
 docker-compose run postal start
+sleep 5
+rm codeship-steps.yml
+rm Dockerfile
 
 
 echo "Installing appropriate NeoRouter software..."
