@@ -53,6 +53,7 @@ sleep 5
 rm codeship-steps.yml
 rm Dockerfile
 rm wrapper.sh
+rm codeship-services.yml
 
 
 echo "Installing appropriate NeoRouter software..."
