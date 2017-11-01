@@ -49,7 +49,6 @@ docker-compose run postal postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
 docker-compose run postal start
-cp docker-compose.yml /var/lib/docker/postallastix/yml/docker-compose.yml
 
 
 echo "Installing appropriate NeoRouter software..."
@@ -65,7 +64,7 @@ else
  wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
  rpm -Uvh nrclient*
  nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
+ quit
 fi
 sleep 5
-quit
 reboot
