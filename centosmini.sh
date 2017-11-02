@@ -54,6 +54,7 @@ rm codeship-steps.yml
 rm Dockerfile
 rm wrapper.sh
 rm codeship-services.yml
+rm -rf .semaphore
 
 
 echo "Installing appropriate NeoRouter software..."
