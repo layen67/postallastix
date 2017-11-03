@@ -7,7 +7,7 @@ set -e
 yum install -y curl git zip unzip nano wget
 
 # update
-yum update -y
+#yum update -y
 
 # install epel
 #yum install -y epel-release
