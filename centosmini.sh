@@ -16,7 +16,7 @@ yum install -y curl git zip unzip nano wget
 
 
 #install docker
-wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+#wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
 yum -y install docker-ce
 systemctl start docker.service
 systemctl enable docker
@@ -55,7 +55,6 @@ rm Dockerfile
 rm wrapper.sh
 rm codeship-services.yml
 rm -rf .semaphore
-
 
 echo "Installing appropriate NeoRouter software..."
 test=`uname -a | grep x86_64`
