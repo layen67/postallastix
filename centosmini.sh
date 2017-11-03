@@ -44,7 +44,7 @@ cd postallastix
 chmod +x /var/lib/docker/postallastix/boot.sh
 docker-compose up -d
 sleep 15
-sed -i -e "s/example.com/callcenter.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
+sed -i -e "s/example.com/aksapark.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
 docker-compose run postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
