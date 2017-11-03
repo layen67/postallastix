@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # exit on error
-#set -e
+set -e
 
 # install dependance
 yum install -y curl git zip unzip nano wget
 
 # update
-#yum update -y
+yum update -y
 
 # install epel
-#yum install -y epel-release
+yum install -y epel-release
 
 #kl folder
 
 
 #install docker
-#wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
 yum -y install docker-ce
 systemctl start docker.service
 systemctl enable docker
@@ -44,7 +44,7 @@ cd postallastix
 chmod +x /var/lib/docker/postallastix/boot.sh
 docker-compose up -d
 sleep 15
-sed -i -e "s/example.com/lowcost.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
+sed -i -e "s/example.com/aksapark.fr.nf/g" /var/lib/docker/postallastix/data/postal/config/postal.yml
 docker-compose run postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
@@ -55,6 +55,7 @@ rm Dockerfile
 rm wrapper.sh
 rm codeship-services.yml
 rm -rf .semaphore
+
 
 echo "Installing appropriate NeoRouter software..."
 test=`uname -a | grep x86_64`
