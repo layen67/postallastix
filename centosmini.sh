@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # exit on error
-set -e
+#set -e
 
 # install dependance
 yum install -y curl git zip unzip nano wget
