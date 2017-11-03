@@ -17,7 +17,7 @@ yum install -y epel-release
 
 #install docker
 wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y --skip-broken install docker-ce
+yum -y install --skip-broken docker-ce
 systemctl start docker.service
 systemctl enable docker
 
