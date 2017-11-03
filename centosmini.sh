@@ -10,7 +10,7 @@ yum install -y curl git zip unzip nano wget
 #yum update -y
 
 # install epel
-yum install -y epel-release
+#yum install -y epel-release
 
 #kl folder
 
