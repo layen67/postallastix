@@ -4,7 +4,7 @@
 set -e
 
 # install dependance
-yum install -y curl git zip unzip nano wget glibc
+yum install -y curl git zip unzip nano wget glibc libtool
 
 # update
 #yum update -y
