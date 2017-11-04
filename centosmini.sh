@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 $domain=$1;
 # exit on error
 set -e
