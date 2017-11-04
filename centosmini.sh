@@ -1,5 +1,5 @@
 #!/bin/sh
-$domain=$1;
+domain=$1;
 # exit on error
 set -e
 
