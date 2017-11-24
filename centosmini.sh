@@ -63,12 +63,12 @@ then
  echo "This is 32-bit CentOS system."
  wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-i386.rpm
  rpm -Uvh nrclient*
- nrclientcmd -d 192.168.0.110 -u serverbox -p Oscarr6172
+ nrclientcmd -d $1 -u serverbox -p Oscarr6172
 else
  echo "This is 64-bit CentOS system."
  wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
  rpm -Uvh nrclient*
- nrclientcmd -d vpn.callcenter.fr.nf -u serverbox -p Oscarr6172
+ nrclientcmd -d $1 -u serverbox -p Oscarr6172
  quit
 fi
 exit 0
