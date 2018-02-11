@@ -15,17 +15,15 @@ yum install -y curl git zip unzip nano wget
 
 
 #install docker
-wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce
-systemctl start docker.service
+curl https://releases.rancher.com/install-docker/17.12.sh | sh
 systemctl enable docker
+systemctl start docker.service
 
 # install Docker Compose:
 # install python-pip
 #wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum -y install epel-release
 yum install -y python-pip
-pip install --upgrade pip
 pip install docker-compose
 
 # upgrade your Python packages:
