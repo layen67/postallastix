@@ -54,23 +54,3 @@ rm Dockerfile
 rm wrapper.sh
 rm codeship-services.yml
 rm -rf .semaphore
-
-
-echo "Installing appropriate NeoRouter software..."
-test=`uname -a | grep x86_64`
-if [ -z "$test" ]
-then
- echo "This is 32-bit CentOS system."
- wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-i386.rpm
- rpm -Uvh nrclient*
- nrclientcmd -d $1 -u serverbox -p Oscarr6172
-else
- echo "This is 64-bit CentOS system."
- wget http://download.neorouter.com/Downloads/NRFree/Update_2.3.1.4360/Linux/CentOS/nrclient-2.3.1.4360-free-centos-x86_64.rpm
- rpm -Uvh nrclient*
- nrclientcmd -d $1 -u serverbox -p Oscarr6172
- quit
-fi
-exit 0
-sleep 5
-reboot
