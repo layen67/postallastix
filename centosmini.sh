@@ -30,6 +30,7 @@ pip install docker-compose
 yum upgrade -y python*
 
 yum -y remove postfix
+yum -y install openvpn
 
 chmod +x /etc/rc.d/rc.local
 echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
@@ -46,9 +47,3 @@ docker-compose run postal initialize-config
 docker-compose run postal initialize
 docker-compose run postal make-user
 docker-compose run postal start
-sleep 5
-rm codeship-steps.yml
-rm Dockerfile
-rm wrapper.sh
-rm codeship-services.yml
-rm -rf .semaphore
