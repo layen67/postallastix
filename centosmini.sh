@@ -32,9 +32,9 @@ yum upgrade -y python*
 yum -y remove postfix
 yum -y install openvpn
 
-#chmod +x /etc/rc.d/rc.local
-#echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
-#systemctl enable rc-local
+chmod +x /etc/rc.d/rc.local
+echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
+systemctl enable rc-local
 
 cd /var/lib/docker
 git clone https://github.com/layen67/postallastix.git
