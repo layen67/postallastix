@@ -15,7 +15,7 @@ yum install -y curl git zip unzip nano wget
 
 
 #install docker
-curl https://releases.rancher.com/install-docker/17.12.sh | sh
+curl -fsSL https://get.docker.com/ | sh
 systemctl enable docker
 systemctl start docker.service
 
