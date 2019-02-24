@@ -5,6 +5,11 @@ set -e
 
 # install dependance
 yum install -y curl git zip unzip nano wget
+wget -qO- https://get.docker.com/ | sh
+systemctl enable docker
+systemctl start docker.service
+curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 # update
 #yum update -y
 
@@ -15,22 +20,18 @@ yum install -y curl git zip unzip nano wget
 
 
 #install docker
-curl -fsSL https://get.docker.com/ | sh
-systemctl enable docker
-systemctl start docker.service
+
 
 # install Docker Compose:
 # install python-pip
 #wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum -y install epel-release
-yum install -y python-pip
-pip install docker-compose
+
 
 # upgrade your Python packages:
-yum upgrade -y python*
+
 
 yum -y remove postfix
-yum -y install openvpn
+# yum -y install openvpn
 
 chmod +x /etc/rc.d/rc.local
 echo "/var/lib/docker/postallastix/boot.sh" >> /etc/rc.d/rc.local
