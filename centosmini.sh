@@ -2,7 +2,6 @@
 domain=$1;
 # exit on error
 set -e
-yum update -y;
 
 # install dependance
 yum install -y curl git zip unzip nano wget;
